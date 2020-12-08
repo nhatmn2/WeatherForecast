@@ -15,7 +15,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    val CITY: String = "Fullerton, CA"
+    val CITY: String = "fullerton,usa" //location must be in this format
     val API: String = "34d8cc8dab66bc691374d628684b5769"
 
     override fun onCreate(savedInstanceState: Bundle?) {
