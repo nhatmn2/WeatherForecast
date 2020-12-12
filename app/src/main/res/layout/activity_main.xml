@@ -25,7 +25,7 @@
             <TextView
                 android:id="@+id/address"
                 android:textSize="24sp"
-                android:text="Location"
+                android:text="fullerton,usa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
@@ -325,7 +325,7 @@
                     <ImageView
                         android:layout_width="25dp"
                         android:layout_height="25dp"
-                        android:src="@drawable/info"
+                        android:src="@drawable/location"
                         app:tint="#FFF">
 
                     </ImageView>
