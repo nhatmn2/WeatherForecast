@@ -15,8 +15,9 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    val CITY: String = "fullerton,usa" //location must be in this format
-    val API: String = "299235b65fa5adf22277b14073b50c40"
+    val CITY: String = "los angeles,usa" //location must be in this format
+    val API: String = "34d8cc8dab66bc691374d628684b5769"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,7 +37,9 @@ class MainActivity : AppCompatActivity() {
         override fun doInBackground(vararg params: String?): String? {
             var response: String?
             try {
-                response = URL("https://api.openweathermap.org/data/2.5/weather?q=$CITY&units=metric&appid=$API").readText(Charsets.UTF_8)
+                response = URL("https://api.openweathermap.org/data/2.5/weather?q=$CITY&units=metric&appid=$API").readText(
+                        Charsets.UTF_8
+                )
             } catch (e: Exception) {
                 response = null
             }
@@ -45,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onPostExecute(result: String?) {
-            onPostExecute(result) //idk whats happening here as well
+            super.onPostExecute(result)
             try {
                 val jsonObj = JSONObject(result)
                 val main = jsonObj.getJSONObject("main")
