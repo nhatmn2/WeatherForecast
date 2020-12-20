@@ -23,6 +23,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         weatherTask().execute()
+        
+        val button = findViewById<Button>(R.id.changeLocationBtn)
+        button.setOnClickListener {
+            val intent = Intent(this, ChangeLocation::class.java)
+            startActivity(intent)
+        }
     }
 
     inner class weatherTask() : AsyncTask<String, Void, String>()
